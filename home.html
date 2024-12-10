@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Application</title>
+  <link href="https://cdn.quilljs.com/1.3.7/quill.snow.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <header class="header">
+    <!--left section: logo-->
+    <div class="header-left">
+        <img src="/img/bmaillogo.png.gif" alt="bmaillogo">
+        <!-- <h1>Bmail</h1>-->
+
+    </div>
+
+    <div>
+        <div class="search-bar">
+            <form>
+                <img src="/img/search (2).png" class="user1" alt="search">
+                <input type="text" placeholder="Search mail">
+                <div class="user">
+                    <img src="/img/settings-sliders (1).png">
+                </div>
+              
+            </form>
+        </div>
+    </div>
+    <!--middle section:search bar-->
+
+    <!--right section:icons and profile-->
+    <div class="header-right">
+        <button>
+            <img src="/img/question-mark.png" alt="Google Apps Icons">
+        </button>
+        <button>
+            <img src="img/settings (1).png" alt="Settings Icons">
+        </button>
+        <div class="profile-icon"></div>
+        <button class="menu_bar" onclick="toggleMenu()">
+            <img src="img/menu-bar.png" alt="dots-menu">
+            <div class="hidden" id="hiddenMenu">
+                <div class="apps-grid">
+                    <div class="app-item">
+                      <img src="img/user (2).png" alt="Account">
+                      <p>Account</p>
+                    </div>
+                    <div class="app-item">
+                      <img src="img/blogo.png" alt="bconnect">
+                      <p>Bconnect</p>
+                    </div>
+                    <div class="app-item">
+                      <img src="img/bijli.jpeg" alt="bmail">
+                      <p>Bijli</p>
+                    </div>
+                    <div class="app-item">
+                      <img src="img/wedo.jpeg" alt="wedo">
+                      <p>Wedo</p>
+                    </div>
+                    <div class="app-item">
+                      <img src="img/domain.jpeg" alt="domain">
+                      <p>Domain</p>
+                    </div>
+                  
+                    <div class="app-item">
+                      <img src="img/hosting.jpeg" alt="web">
+                      <p>Hosting</p>
+                    </div>
+                   
+            </div>
+        </button>
+
+
+        <button onclick="toggleUserDetails()">
+
+            <img src="img/user (3).png" alt="user">
+            <div class="hidden" id="hiddenUserDetails">
+                <div class="cross">
+                <img src="img/close.png" alt="cross">
+                </div>
+                <h1>ns8789750@gmail.com</h1>
+             
+                <div class="container2">
+                    <img src="img/user (3).png" alt="user">
+                    <div class="icon">
+                        <img src="img/pen.png" alt="pen">
+                    </div>
+                </div>
+                <h1 class="hiimsg">Hi,Nikki!</h1>
+                <div class="account">
+                    <p> Manage your Bmail Account</p>
+                </div>
+            
+                     <div class="another">
+                    <div class="adds">
+                        <img src="img/add.png" alt="add">
+
+                        Add another account
+                    </div>
+
+                    <div class="logo">
+                        <img src="img/log-out.png" alt="logout">
+                        Sign out
+                    </div>
+                    </div>
+                    <div class="doc">
+                    <div class="cloud">
+                        <img src="img/cloud-computing.png" alt="cloud">35% of 15 GB used
+                    </div>
+                    </div>
+                    <div class="private">
+                        <p>Privacy policy .Terms of service</p>
+                    </div>
+                     
+
+            
+        </button>
+
+
+    </div>
+
+
+</header>
+
+
+
+  <!-- Sidebar -->
+  
+    <!-- <div class="container">
+      
+      <ul class="nav_bar">
+        <button id="compose-btn" class="compose-btn" onclick="openCompose()"><i class='bx bxs-pencil'></i><span class="nav_bar_name" >Compose</span></button>
+        <div class="spacing"></div>
+        <li><a href=""><i class="bx bxs-inbox"></i><span class="nav_bar_name" >Inbox</span></a></li>
+        <li><a href=""><i class="bx bx-star"></i><span class="nav_bar_name">Starred</span></a></li>
+        <li><a href=""><i class="bx bx-time-five"></i><span class="nav_bar_name">Snoozed</span></a></li>
+        
+        <li><a href=""><i class="bx bx-send"></i><span class="nav_bar_name">Sent</span></a></li>
+        <li><a href=""><i class="bx bx-note bx-flip-vertical"></i><span class="nav_bar_name">Draft</span></a></li>
+        
+        <li><a href="#" class="submenu_toggle">
+          <i class='bx bx-plus'></i><span class="nav_bar_name">More</span>
+        </a>
+      </li>
+      <ul class="submenu_hide">
+        <li><a href="#"><i class="bx bx-label"></i><span class="nav_bar_name">Important</span></a></li>
+        <li><a href="#"><i class='bx bx-chat'></i><span class="nav_bar_name">Chats</span></a></li>
+      
+          <li><a href=""><i class='bx bx-send'></i><span class="nav_bar_name">Scheduled</span></a></li>
+          <li><a href=""><i class='bx bx-envelope'></i><span class="nav_bar_name">All Mail</span></a></li>
+          <li><a href=""><i class='bx bx-error-alt'></i><span class="nav_bar_name">Spam</span></a></li>
+          <li><a href=""><i class='bx bx-trash'></i><span class="nav_bar_name">Trase</span></a></li>
+        </ul>
+      </ul>
+    </div> -->
+
+
+
+
+
+
+
+  <div class="sidebar">
+     
+    <ul class="nav_bar">
+      <button id="compose-btn" class="compose-btn" onclick="openCompose()"><i class='bx bxs-pencil'></i><span class="nav_bar_name" >Compose</span></button>
+      <div class="spacing"></div>
+      <li><a href=""><i class="bx bxs-inbox"></i><span class="nav_bar_name" >Inbox</span></a></li>
+      <li><a href=""><i class="bx bx-star"></i><span class="nav_bar_name">Starred</span></a></li>
+      <li><a href=""><i class="bx bx-time-five"></i><span class="nav_bar_name">Snoozed</span></a></li>
+      
+      <li><a href=""><i class="bx bx-send"></i><span class="nav_bar_name">Sent</span></a></li>
+      <li><a href=""><i class="bx bx-note bx-flip-vertical"></i><span class="nav_bar_name">Draft</span></a></li>
+      
+      <li><a href="#" class="submenu_toggle">
+        <i class='bx bx-plus'></i><span class="nav_bar_name">More</span>
+      </a>
+    </li>
+    <ul class="submenu_hide">
+      <li><a href="#"><i class="bx bx-label"></i><span class="nav_bar_name">Important</span></a></li>
+      <li><a href="#"><i class='bx bx-chat'></i><span class="nav_bar_name">Chats</span></a></li>
+    
+        <li><a href=""><i class='bx bx-send'></i><span class="nav_bar_name">Scheduled</span></a></li>
+        <li><a href=""><i class='bx bx-envelope'></i><span class="nav_bar_name">All Mail</span></a></li>
+        <li><a href=""><i class='bx bx-error-alt'></i><span class="nav_bar_name">Spam</span></a></li>
+        <li><a href=""><i class='bx bx-trash'></i><span class="nav_bar_name">Trase</span></a></li>
+      </ul>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+
+  <div class="main-section">
+    <h2>Bmail Inbox</h2>
+    <div class="email-list" id="email-list">
+      <!-- Email items will be inserted here dynamically by JavaScript -->
+    </div>
+    <div class="email-time">
+      <span class="live-time"></span>
+    </div>
+  </div>
+  <div class="main-content" id="main-content">
+    <!-- Content of the selected email will appear here -->
+  </div>
+
+
+
+  
+
+   <!-- Compose Popup -->
+   <div id="compose-popup" class="compose-popup">
+    <div class="compose-header">
+      <span>New Message</span>
+      <button class="min-btn"  onclick="minimizeCompose()">-</button>
+      <button class="fullscreen-btn" onclick="fullCompose()">⛶</button>
+      <button class="close-btn"   onclick="closeCompose()">X</button>
+
+    </div>
+    <form id="compose-form">
+      <div class="recipient-fields">
+        <input type="text" placeholder="To" id="to-field" class="compose-input" name="to">
+        <button type="button" class="cc-btn" onclick="toggleCc()">Cc</button>
+        <button type="button" class="bcc-btn" onclick="toggleBcc()">Bcc</button>
+      </div>
+      
+      <input type="text" placeholder="Cc" id="cc-field" class="compose-input" name="cc" style="display: none;">
+      <input type="text" placeholder="Bcc" id="bcc-field" class="compose-input" name="bcc" style="display: none;">
+      
+      <input type="text" id="subject" placeholder="Subject" class="compose-input" name="subject">
+      <ul id="subject-suggestions" class="hidden"></ul>
+      
+      <div id="editor-container" class="compose-input" contenteditable="true" placeholder="Compose your message..."></div>
+      
+      <div class="compose-footer" id="statusMessage">
+        <input type="file" id="attach-file" class="file-input" onchange="handleFileChange()" />
+        <span id="file-name" class="file-name"></span>
+        
+        <button type="button" class="send-btn" onclick="sendEmail()">
+          <i class="fas fa-paper-plane"></i> Send
+        </button>
+        
+        <label for="attach-file" class="attach-btn">
+          <i class="fas fa-paperclip"></i>
+        </label>
+        <button type="button" class="delete-btn" onclick="deleteEmail()">
+          <i class="fas fa-trash-alt"></i> Delete
+        </button>
+      </div>
+    </form>
+    
+  </div>
+
+  
+    
+
+
+
+ 
+  <script src="https://cdn.quilljs.com/1.3.7/quill.min.js"></script>
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
